@@ -7,7 +7,7 @@
     <div class="container">
         <h1>Editar Carta</h1>
         <br>
-        <form action="{{ route('cards.update', $card->id) }}" method="POST">
+        <form action="{{ route('cards.update', $card) }}" method="POST">
             @csrf
             @method('PATCH')
             <div class="mb-3">

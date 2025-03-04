@@ -25,7 +25,7 @@
                     <th>Rareza</th>
                     <th>Maná</th>
                     <th>Descripción</th>
-                    <!-- <th>Expansión</th> -->
+                    <th>Expansión</th>
                     <th></th>
                 </tr>
             </thead>
@@ -39,7 +39,7 @@
                         <td>{{ $card->rarity }}</td>
                         <td>{{ $card->mana_cost }}</td>
                         <td>{{ $card->description }}</td>
-                        <!-- <td>{{ $card->expansion }}</td> -->
+                        <td>{{ $card->expansion }}</td>
                         <td class="text-end">
                             <a href="{{ route('cards.show', $card->id) }}" class="btn btn-info">Ver</a>
                             <a href="{{ route('cards.edit', $card->id) }}" class="btn btn-success">Editar</a>
