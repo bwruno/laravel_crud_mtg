@@ -8,11 +8,9 @@ You must log in with the user "bwruno" & password "12345", but you can change it
 ######
 It uses MySQL powered by Docker.
 ######
-Laravel version: 12
-######
-PHP version: 8.1
-######
-Tailwind CSS & Bootstrap
+- Laravel version: 12
+- PHP version: 8.1
+- Tailwind CSS & Bootstrap 5
 ####
 ## How to run
 1. Clone the repository

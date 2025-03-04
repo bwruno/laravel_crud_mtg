@@ -30,7 +30,7 @@
                 <input type="text" class="form-control" id="rarity" name="rarity" placeholder="Común, Infrecuente, Rara, Mítica" value="{{ $card->rarity }}">
             </div>
             <div class="mb-3">
-                <label for="mana_cost" class="form-label">Mana Cost</label>
+                <label for="mana_cost" class="form-label">Coste de Maná</label>
                 <input type="text" class="form-control" id="mana_cost" name="mana_cost" value="{{ $card->mana_cost }}">
             </div>
             <div class="mb-3">

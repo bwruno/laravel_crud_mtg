@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container">
-        <h1>Lista de Cartas</h1>
+        <h1 class="mt-3">Lista de Cartas</h1>
         <br>
         @if (session('success'))
             <div class="alert alert-success mt-2">
@@ -23,9 +23,9 @@
                     <th>Tipo</th>
                     <th>Color</th>
                     <th>Rareza</th>
-                    <th>Mana Cost</th>
+                    <th>Maná</th>
                     <th>Descripción</th>
-                    <th>Expansión</th>
+                    <!-- <th>Expansión</th> -->
                     <th></th>
                 </tr>
             </thead>
@@ -39,14 +39,14 @@
                         <td>{{ $card->rarity }}</td>
                         <td>{{ $card->mana_cost }}</td>
                         <td>{{ $card->description }}</td>
-                        <td>{{ $card->expansion }}</td>
+                        <!-- <td>{{ $card->expansion }}</td> -->
                         <td class="text-end">
                             <a href="{{ route('cards.show', $card->id) }}" class="btn btn-info">Ver</a>
                             <a href="{{ route('cards.edit', $card->id) }}" class="btn btn-success">Editar</a>
                             <form action="{{ route('cards.destroy', $card->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Borrar</button>
+                                <button type="submit" onclick="return confirm('¿Estás seguro de que quieres borrar esta carta?')" class="btn btn-danger">Borrar</button>
                             </form>
                         </td>
                     </tr>

@@ -79,9 +79,10 @@ class CardsController extends Controller
         return redirect()->route('cards.index')->with('success', 'Carta actualizada correctamente');
     }
 
-    /** Remove the specified resource from storage. */
-    public function destroy(string $id)
+    /** Para borrar una carta de la base de datos */
+    public function destroy(Card $card)
     {
-        //
+        $card->delete();
+        return redirect()->route('cards.index')->with('success', 'Carta borrada correctamente');
     }
 }

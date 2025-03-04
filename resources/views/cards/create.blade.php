@@ -16,7 +16,7 @@
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
-                <input type="text" class="form-control" id="type" name="type" placeholder="Ej: Criatura" value="{{ old('type') }}">
+                <input type="text" class="form-control" id="type" name="type" placeholder="Ejemplo: Criatura" value="{{ old('type') }}">
             </div>
             <div class="mb-3">
                 <label for="color" class="form-label">Color</label>
@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" id="rarity" name="rarity" placeholder="Común, Infrecuente, Rara, Mítica" value="{{ old('rarity') }}">
             </div>
             <div class="mb-3">
-                <label for="mana_cost" class="form-label">Mana Cost</label>
+                <label for="mana_cost" class="form-label">Coste de Maná</label>
                 <input type="text" class="form-control" id="mana_cost" name="mana_cost" value="{{ old('mana_cost') }}">
             </div>
             <div class="mb-3">
