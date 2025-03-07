@@ -14,7 +14,9 @@ It uses MySQL powered by Docker.
 ####
 ## How to run
 1. Clone the repository
-2. Run the docker-compose file
-3. Go to http://localhost:8000
+2. Configure the ".env" file
+3. Migrate the database
+4. Run the docker-compose file
+5. Go to http://localhost:8000
 ###
 ###### By: Bruno Guallar Aliaga

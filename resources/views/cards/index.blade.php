@@ -5,6 +5,7 @@
 @section('content')
 
     <div class="container">
+        
         <h1 class="mt-3">Lista de Cartas</h1>
         <br>
         @if (session('success'))

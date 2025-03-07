@@ -4,9 +4,20 @@ use App\Http\Controllers\CardsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Ruta para cambiar el idioma
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['es', 'en', 'bg', 'de'])) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('lang.switch');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
