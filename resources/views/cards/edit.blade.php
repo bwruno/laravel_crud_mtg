@@ -7,7 +7,7 @@
     <div class="container">
         <h1>Editar Carta</h1>
         <br>
-        <form action="{{ route('cards.update', $card->id) }}" method="POST">
+        <form id="updateForm" action="{{ route('cards.update', $card->id) }}" method="POST">
             @csrf
             @method('PATCH')
             <div class="mb-3">
@@ -51,8 +51,27 @@
                 </div>
             @endif
             <a href="{{ route('cards.index') }}" class="btn btn-secondary">Cancelar</a>
-            <button onclick="return confirm('¿Estas seguro de que quieres actualizar esta carta?')" type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="button" id="updateButton" class="btn btn-primary">Actualizar</button>
+           
         </form>
+        <script>
+            document.getElementById('updateButton').addEventListener('click', function() {
+                Swal.fire({
+                    title: '¿Confirmar actualización?',
+                    text: '¿Estás seguro de que deseas actualizar este registro?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí, actualizar',
+                    cancelButtonText: 'Cancelar',
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('updateForm').submit();
+                    }
+                });
+            });
+        </script>
     </div>
 
 @endsection

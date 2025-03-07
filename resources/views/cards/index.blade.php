@@ -43,11 +43,33 @@
                         <td class="text-end">
                             <a href="{{ route('cards.show', $card->id) }}" class="btn btn-info">Ver</a>
                             <a href="{{ route('cards.edit', $card->id) }}" class="btn btn-success">Editar</a>
-                            <form action="{{ route('cards.destroy', $card->id) }}" method="POST" class="d-inline">
+                            <!-- Botón de eliminación -->
+                            <form id="deleteForm" action="{{ route('cards.destroy', $card->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Estás seguro de que quieres borrar esta carta?')" class="btn btn-danger">Borrar</button>
+
+                                <button type="button" id="deleteButton" class="btn btn-danger">Eliminar</button>
                             </form>
+
+                            <script>
+                                document.getElementById('deleteButton').addEventListener('click', function() {
+                                    Swal.fire({
+                                        title: '¿Estás seguro?',
+                                        text: '¡Esta acción no se puede deshacer!',
+                                        icon: 'warning',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Sí, eliminar',
+                                        cancelButtonText: 'Cancelar',
+                                        confirmButtonColor: '#d33',
+                                        cancelButtonColor: '#3085d6',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            document.getElementById('deleteForm').submit();
+                                        }
+                                    });
+                                });
+                            </script>
+
                         </td>
                     </tr>
                 @endforeach
